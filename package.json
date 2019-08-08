@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^3.9.2",
-    "@material-ui/icons": "^3.0.2",
+    "@material-ui/core": "^4.3.0",
+    "@material-ui/icons": "^4.2.1",
     "axios": "^0.18.0",
     "i18next": "^15.0.7",
     "i18next-browser-languagedetector": "^3.0.1",
@@ -21,9 +21,11 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "eslint": "eslint --ext .jsx,.js src"
+    "test": "react-scripts test --maxWorkers=3",
+    "test:coverage": "react-scripts test --watchAll=false --coverage --no-cache --logHeapUsage --silent --maxWorkers=2",
+    "eslint": "eslint --ext .jsx,.js src",
+    "docs:dev": "docz dev",
+    "docs:build": "docz build"
   },
   "browserslist": [
     ">0.2%",
@@ -32,7 +34,9 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "@softboxlab/eslint-config-gandalf-lint": "^0.2.1",
+    "@softboxlab/eslint-config-gandalf-lint": "^1.0.0",
+    "docz": "^0.13.7",
+    "docz-theme-default": "^0.13.7",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.11.2",
     "enzyme-to-json": "^3.3.5",
